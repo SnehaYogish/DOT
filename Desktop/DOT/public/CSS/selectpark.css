@@ -1,0 +1,82 @@
+header {
+  position: fixed;
+  top: 200px;
+  left: 400px;
+  right: 500px;
+  background-color: #f5f5dc;
+}
+
+main {
+  width: 365px;
+  margin: 300px auto 0px auto;
+  background-color: #f5f5dc;
+}
+
+body {
+  background-color: #f5f5dc;
+  background-repeat: no-repeat;
+  background-position: right top;
+  background-size:500px 650px;
+  margin-right: 200px
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 50px;
+}
+
+#Disneycali-form-button {
+  color: #000000;
+  font-size: 40px;
+  text-align: center;
+  background-color: #D3D3D3;
+  cursor: pointer;
+  width: 250px;
+  margin-bottom:20px;
+  border-radius: 50%;
+
+}
+
+
+#sixflags-form-button {
+  color: #000000;
+  font-size: 40px;
+  text-align: center;
+  background-color: #D3D3D3;
+  cursor: pointer;
+  width: 250px;
+  margin-bottom:15px;
+  border-radius: 50%;
+
+}
+
+#Disneyland-form-button {
+  color: #000000;
+  font-size: 40px;
+  text-align: center;
+  background-color: #D3D3D3;
+  cursor: pointer;
+  width: 250px;
+  margin-bottom:15px;
+  border-radius: 50%;
+}
+
+#KnottsBerry-form-button {
+  color: #000000;
+  font-size: 40px;
+  text-align: center;
+  background-color: #D3D3D3;
+  cursor: pointer;
+  width: 250px;
+  margin-bottom:15px;
+  border-radius: 50%;
+}
+
+#universal-form-button {
+  color: #000000;
+  font-size: 40px;
+  text-align: center;
+  background-color: #D3D3D3;
+  cursor: pointer;
+  width: 250px;
+  margin-bottom:15px;
+  border-radius: 50%;
+}
+

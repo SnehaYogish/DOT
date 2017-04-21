@@ -59,8 +59,7 @@ connection.query('SELECT pwd FROM profile WHERE username = ?',[username], functi
     })
   }else{
     if(pwd1 == results[0].pwd){
-      console.log(results.pwd);
-      res.redirect("/login/payment");
+      res.redirect("/login/first");
       }
       else{
         res.send({
@@ -86,16 +85,10 @@ connection.query(query, [username,firstname,lastname,email_addre,phone_number,do
     if(err){
       console.log(err);
     }
- res.redirect("/login");
+ res.redirect("/login/payment");
 });
 });
 
-
-//select username,pwd from profile where username = username;
-//if pwd == pwd 
-//   consol.log("login successful");
-// else 
-//   ("please enter correct username and password")
 
 app.get('/login/payment',function(req,res){
   res.render('payment');
@@ -113,15 +106,23 @@ app.post('/login/payment/save',function(req,res){
    if(err){
       console.log(err);
     }
-  res.redirect("/login/payment/save");
+  res.redirect("/login");
 });
 });
 
-
-
-app.get('/login/payment/save',function(req,res){
+app.get('/login/first',function(req,res){
   res.render('select');
 });
+
+app.get('/myaccount', function(req,res){
+  res.render('myaccount')
+});
+
+app.get('/selectpark', function(req,res){
+  res.render('selectpark');
+});
+
+
 
 
 
