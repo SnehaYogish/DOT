@@ -122,6 +122,17 @@ app.get('/selectpark', function(req,res){
   res.render('selectpark');
 });
 
+app.get('/Disney-Cali-adv', function(req,res){
+  res.render('disneyCali');
+});
+
+app.get('/enterTicket',function(req,res){
+res.render('enterTicket');
+});
+
+app.post('/enterTicket/verified',function(req,res){
+  res.render('ticketVerification');
+});
 
 
 

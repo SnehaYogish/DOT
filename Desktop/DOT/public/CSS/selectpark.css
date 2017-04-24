@@ -28,10 +28,13 @@ body {
   text-align: center;
   background-color: #D3D3D3;
   cursor: pointer;
-  width: 250px;
+  width: 330px;
+  height: 330px;
   margin-bottom:20px;
-  border-radius: 50%;
-
+  border-radius: 100%;
+  background-image: url("../images/Adventure Park Button.jpg");
+  position:absolute; left:0;
+  top:60px;
 }
 
 
@@ -41,9 +44,14 @@ body {
   text-align: center;
   background-color: #D3D3D3;
   cursor: pointer;
-  width: 250px;
+  width: 330px;
+  height: 330px;
   margin-bottom:15px;
   border-radius: 50%;
+  background-size: contain;
+  background-image: url("../images/Six Flags Button.jpg");
+  position:absolute;
+  top:60px;
 
 }
 
@@ -53,9 +61,16 @@ body {
   text-align: center;
   background-color: #D3D3D3;
   cursor: pointer;
-  width: 250px;
+  width: 330px;
+  height: 330px;
   margin-bottom:15px;
   border-radius: 50%;
+  background-image: url("../images/Disney button.jpg");
+  background-size: contain;
+  background-repeat: no-repeat;
+  position:absolute; right:0;
+  top:60px;
+
 }
 
 #KnottsBerry-form-button {
@@ -64,9 +79,14 @@ body {
   text-align: center;
   background-color: #D3D3D3;
   cursor: pointer;
-  width: 250px;
+  width: 330px;
+  height:330px;
   margin-bottom:15px;
   border-radius: 50%;
+  background-image: url("../images/Knotts button.jpg");
+  background-position: center ; 
+  position:relative; left:250px;
+
 }
 
 #universal-form-button {
@@ -75,8 +95,13 @@ body {
   text-align: center;
   background-color: #D3D3D3;
   cursor: pointer;
-  width: 250px;
+  width: 330px;
+  height:330px;
   margin-bottom:15px;
   border-radius: 50%;
+  background-image: url("../images/Universal button.jpg");
+  position:relative; right:250px;
+  bottom:350px;
+
 }
 
