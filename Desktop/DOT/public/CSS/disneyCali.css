@@ -30,7 +30,9 @@ body {
   background-color: #D3D3D3;
   cursor: pointer;
   width: 250px;
-  margin-bottom:15px
+  margin-bottom:15px;
+   position:absolute;
+  top:60px;
 }
 
 #enter-ticket-number-button{ 
@@ -40,7 +42,9 @@ body {
   background-color: #D3D3D3;
   cursor: pointer;
   width: 250px;
-  margin-bottom:15px
+  margin-bottom:15px;
+     position:relative;
+  bottom:80px;
 }
 
 #I-have-pass-button{ 
@@ -50,6 +54,8 @@ body {
   background-color: #D3D3D3;
   cursor: pointer;
   width: 250px;
-  margin-bottom:15px
+  margin-bottom:15px;
+     position:relative;
+  bottom:80px;
 }
 

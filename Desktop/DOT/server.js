@@ -118,6 +118,34 @@ app.get('/myaccount', function(req,res){
   res.render('myaccount')
 });
 
+app.post('/myaccount',function(req,res){
+  var query = 'SELECT username FROM profile WHERE user_id = 22';
+  var username  = req.body.username;
+
+connection.query(query, function(err, results) {
+  if(err || results.length === 0) {
+   console.log(err || 'No user found.');
+   res.redirect('/');
+   return;
+ }
+res.render('myaccount',{ username : results[0].username});
+});
+});
+
+
+app.post('/myaccount/:user_id/edit', function(req, res) {
+   var query = 'SELECT username FROM profile WHERE user_id = 22';
+  connection.query(query,[username,firstname],function(err, results) {
+   if(err || rows.length === 0) {
+    console.log(err || 'No user found.');
+    res.redirect('/');
+    return;
+  }
+res.render('editAccount',{ username : results[0].username});
+});
+});
+
+
 app.get('/selectpark', function(req,res){
   res.render('selectpark');
 });
@@ -132,6 +160,14 @@ res.render('enterTicket');
 
 app.post('/enterTicket/verified',function(req,res){
   res.render('ticketVerification');
+});
+
+app.get('/iHavePass', function(req,res){
+  res.render('iHavePass');
+});
+
+app.post('/iHavePass/verified', function(req,res){
+  res.render('passVerified');
 });
 
 

@@ -5,14 +5,14 @@
   <body>
     <main>
     <form action="/createprofile/users" method ="post">
-    Username: <input type="text" name="uname" required=""><br>
-    First Name: <input type="text" name="Fname" required=""><br>
-    Last Name: <input type="text" name="Lname" required=""><br>
-    Email Address: <input type="email" name="email" required=""><br>
-    Phone Number: <input type="Number" name="pnum" maxlength="10" required=""><br>
-    Date of Birth(yyyy-mm-dd): <input type="Date" name="DOB" maxlength="10" max="2010-01-02" ><br>
-    password: <input pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}" type="password" name="pwd" minlength="8" required=""><br>
-    Confirm password: <input pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}" type="password" name="Confirmpwd" minlength="8" required=""><br>
+    Username*: <input type="text" name="uname" required=""><br>
+    First Name*: <input type="text" name="Fname" required=""><br>
+    Last Name*: <input type="text" name="Lname" required=""><br>
+    Email Address*: <input type="email" name="email" required=""><br>
+    Phone Number*: <input type="tel" name="pnum" maxlength="10" required=""><br>
+    Date of Birth(yyyy-mm-dd)*: <input type="Date" name="DOB" ><br>
+    password*: <input pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}" type="password" name="pwd" minlength="8" required=""><br>
+    Confirm password*: <input pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}" type="password" name="Confirmpwd" minlength="8" required=""><br>
     <input type="submit" value="Submit">
     </form>
     </main>

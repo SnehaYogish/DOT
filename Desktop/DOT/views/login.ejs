@@ -9,8 +9,13 @@
      Username: <input type="text" name="uname"><br>
      Password: <input type="password" name="pwd"><br>
     <input type="submit" value="Submit">
-    <button id="forgot-password-form-button">Forgot password?</button>
+    <button onclick="MyFunction1()"  id="forgot-password-form-button">Forgot password?</button>
         <button id="forgot-username-account-form-button">Forgot username?</button>
+        <script>
+  function MyFunction1() { 
+     window.location.href = '/Forgot'
+  }
+</script>
       </form>
      </main>
   </body>

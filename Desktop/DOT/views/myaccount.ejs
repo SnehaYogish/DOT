@@ -6,8 +6,8 @@
           My Account</head>
   <body>
     <main>
-    <form action="/myaccount" method ="post">
-    Hello: <input type="text" name="uname"><br>
+    <form action="/myaccount/:user_id/edit" method ="post">
+    Hello: <input id="username" type="text" ><br>
     My Balance: <input type="text" name="mybalance" ><br>
     My Rewards: <input type="text" name="myrewards" ><br>
     <button id ="edit-account-button" name="Fname">Edit Account info:</button>

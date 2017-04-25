@@ -3,13 +3,11 @@ header {
   top: 200px;
   left: 400px;
   right: 500px;
-  background-color: #f5f5dc;
 }
 
 main {
   width: 365px;
   margin: 300px auto 0px auto;
-  background-color: #f5f5dc;
 }
 
 body {
@@ -23,26 +21,22 @@ body {
 }
 
 #Disneycali-form-button {
-  color: #000000;
-  font-size: 40px;
-  text-align: center;
-  background-color: #D3D3D3;
   cursor: pointer;
   width: 330px;
   height: 330px;
   margin-bottom:20px;
   border-radius: 100%;
-  background-image: url("../images/Adventure Park Button.jpg");
-  position:absolute; left:0;
   top:60px;
+  background-image: url("../images/adventure park button.jpg");
+  background-size: contain;
+  position:absolute; left:0;
+  background-repeat: round;
+  background-color: #4CAF50;
+  background-height:auto;
 }
 
 
 #sixflags-form-button {
-  color: #000000;
-  font-size: 40px;
-  text-align: center;
-  background-color: #D3D3D3;
   cursor: pointer;
   width: 330px;
   height: 330px;
@@ -52,14 +46,12 @@ body {
   background-image: url("../images/Six Flags Button.jpg");
   position:absolute;
   top:60px;
+  background-repeat: round;
+
 
 }
 
 #Disneyland-form-button {
-  color: #000000;
-  font-size: 40px;
-  text-align: center;
-  background-color: #D3D3D3;
   cursor: pointer;
   width: 330px;
   height: 330px;
@@ -67,17 +59,14 @@ body {
   border-radius: 50%;
   background-image: url("../images/Disney button.jpg");
   background-size: contain;
-  background-repeat: no-repeat;
   position:absolute; right:0;
   top:60px;
+  background-repeat: round;
+
 
 }
 
 #KnottsBerry-form-button {
-  color: #000000;
-  font-size: 40px;
-  text-align: center;
-  background-color: #D3D3D3;
   cursor: pointer;
   width: 330px;
   height:330px;
@@ -86,14 +75,14 @@ body {
   background-image: url("../images/Knotts button.jpg");
   background-position: center ; 
   position:relative; left:250px;
-
+  background-size: 330px 330px;
+  background-repeat: round;
+  background-height:auto;
+  color: yellow;
+  padding: 15px 32px;
 }
 
 #universal-form-button {
-  color: #000000;
-  font-size: 40px;
-  text-align: center;
-  background-color: #D3D3D3;
   cursor: pointer;
   width: 330px;
   height:330px;
@@ -102,6 +91,11 @@ body {
   background-image: url("../images/Universal button.jpg");
   position:relative; right:250px;
   bottom:350px;
-
-}
+  background-size: cover;
+  background-repeat: round;
+  }
+  
+  .button{
+    color:green;
+  }
 
