@@ -1,5 +1,7 @@
 'use strict'
 
+
+
 var express = require('express');
 var mysql = require('mysql');
 var app = express();
@@ -52,7 +54,7 @@ app.post('/login/users', function (req,res) {
   
 connection.query('SELECT pwd FROM profile WHERE username = ?',[username], function (error, results, fields) {
   if (error) {
-    // console.log("error ocurred",error);
+    console.log("error ocurred",error);
     res.send({
       "code":400,
       "failed":"error ocurred"
@@ -118,30 +120,20 @@ app.get('/myaccount', function(req,res){
   res.render('myaccount')
 });
 
-app.post('/myaccount',function(req,res){
-  var query = 'SELECT username FROM profile WHERE user_id = 22';
-  var username  = req.body.username;
-
-connection.query(query, function(err, results) {
-  if(err || results.length === 0) {
-   console.log(err || 'No user found.');
-   res.redirect('/');
-   return;
- }
-res.render('myaccount',{ username : results[0].username});
-});
-});
-
-
 app.post('/myaccount/:user_id/edit', function(req, res) {
-   var query = 'SELECT username FROM profile WHERE user_id = 22';
-  connection.query(query,[username,firstname],function(err, results) {
+   var query = 'SELECT * FROM profile WHERE user_id = 22';
+   
+connection.query(query,function(err,rows) {
    if(err || rows.length === 0) {
     console.log(err || 'No user found.');
     res.redirect('/');
     return;
   }
-res.render('editAccount',{ username : results[0].username});
+  //var obj[] = res.json(rows);
+  var obj = [];
+  obj = JSON.stringify(rows,null, "\t");
+  console.log(obj.username);
+  res.render('editAccount',{ username : obj.username, firstname : obj[8] });
 });
 });
 
@@ -170,7 +162,13 @@ app.post('/iHavePass/verified', function(req,res){
   res.render('passVerified');
 });
 
+app.get('/purchaseTicket', function(req,res){
+  res.render('purchaseTicket');
+});
 
+app.post('/purchaseTicket/completed',function(req,res){
+  res.render('purchaseCompleted');
+});
 
 
 

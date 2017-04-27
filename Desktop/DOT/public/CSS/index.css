@@ -1,19 +1,19 @@
 header {
   position: fixed;
   top: 200px;
-  left: 400px;
-  right: 500px;
-  background-color: #f5f5dc;
+  left: 450px;
+  right: 200px;
+  background-color: #ADD8E6;
 }
 
 main {
   width: 365px;
   margin: 300px auto 0px auto;
-  background-color: #f5f5dc;
+  background-color: #ADD8E6;
 }
 
 body {
-  background-color: #f5f5dc;
+  background-color: #ADD8E6;
   background-image: url("../images/1.jpg");
   background-repeat: no-repeat;
   background-position: right top;
@@ -27,18 +27,23 @@ body {
   color: #000000;
   font-size: 50px;
   text-align: center;
-  background-color: #D3D3D3;
+  background-color: #55acee;
   cursor: pointer;
   width: 250px;
-  margin-bottom:15px
+  margin-bottom:15px;
+  border-radius: 25px;
+  box-shadow: 0 6px #999;
 }
 
 #create-account-form-button {
-  color: #000000;
+  background-color: #55acee;
+  display: inline-block;
   font-size: 50px;
   text-align: center;
-  background-color: #D3D3D3;
   cursor: pointer;
   width: 250px;
-  margin-bottom:15px
+  margin-bottom:15px;
+  border-radius: 15px;
+  border-radius: 25px;
+  box-shadow: 0 6px #999;
 }

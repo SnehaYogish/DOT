@@ -3,17 +3,17 @@ header {
   top: 200px;
   left: 150px;
   right: 900px;
-  background-color: #f5f5dc;
+  background-color: #ADD8E6;
 }
 
 main {
   width: 365px;
   margin: 100px auto 0px auto;
-  background-color: #f5f5dc;
+  background-color: #ADD8E6;
 }
 
 body {
-  background-color: #f5f5dc;
+  background-color: #ADD8E6;
   background-repeat: no-repeat;
   background-position: right top;
   background-size:500px 650px;
@@ -29,5 +29,5 @@ input {
     border-radius: 4px;
     background-color: #f8f8f8;
     resize: none;
-    margin-bottom:15px
+    margin-bottom:15px;
 }

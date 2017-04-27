@@ -3,17 +3,17 @@ header {
   top: 200px;
   left: 400px;
   right: 500px;
-  background-color: #f5f5dc;
+  background-color: #ADD8E6;
 }
 
 main {
   width: 365px;
   margin: 300px auto 0px auto;
-  background-color: #f5f5dc;
+  background-color: #ADD8E6;
 }
 
 body {
-  background-color: #f5f5dc;
+  background-color: #ADD8E6;
   background-repeat: no-repeat;
   background-position: right top;
   background-size:500px 650px;
@@ -26,10 +26,12 @@ body {
   color: #000000;
   font-size: 50px;
   text-align: center;
-  background-color: #D3D3D3;
+ background-color: #55acee;
   cursor: pointer;
   width: 250px;
   margin-bottom:15px
   background-margin:250px;
+  border-radius: 25px;
+  box-shadow: 0 6px #999;
 }
 

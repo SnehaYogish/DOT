@@ -3,18 +3,17 @@ header {
   top: 200px;
   left: 400px;
   right: 500px;
-  background-color: #f5f5dc;
+  background-color: #ADD8E6;
 }
 
 main {
   width: 365px;
   margin: 300px auto 0px auto;
-  background-color: #f5f5dc;
+  background-color: #ADD8E6;
 }
 
 body {
-  background-color: #f5f5dc;
-  background-image: url("../images/Adventure homepage icon.jpg");
+ background-color: #ADD8E6;
   background-repeat: no-repeat;
   background-position: left top;
   background-size:300px 250px;
@@ -27,35 +26,63 @@ body {
   color: #000000;
   font-size: 50px;
   text-align: center;
-  background-color: #D3D3D3;
+ background-color: #55acee;
   cursor: pointer;
   width: 250px;
   margin-bottom:15px;
    position:absolute;
   top:60px;
+  border-radius: 25px;
+  box-shadow: 0 6px #999;
+  left:600px;
 }
 
 #enter-ticket-number-button{ 
    color: #000000;
   font-size: 50px;
   text-align: center;
-  background-color: #D3D3D3;
+  background-color: #55acee;
   cursor: pointer;
   width: 250px;
   margin-bottom:15px;
-     position:relative;
-  bottom:80px;
+  position:absolute;
+  bottom:200px;
+  border-radius: 25px;
+  box-shadow: 0 6px #999;
+  left:600px;
 }
 
 #I-have-pass-button{ 
-   color: #000000;
+  color: #000000;
   font-size: 50px;
   text-align: center;
-  background-color: #D3D3D3;
+  background-color: #55acee;
   cursor: pointer;
   width: 250px;
   margin-bottom:15px;
-     position:relative;
-  bottom:80px;
+  position:relative;
+  bottom:280px;
+  border-radius: 25px;
+  left:530px;
+  box-shadow: 0 6px #999;
+}
+
+.card {
+    /* Add shadows to create the "card" effect */
+    box-shadow: 0 12px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+    float: left;
+    border-radius: 25px;
+}
+
+/* On mouse-over, add a deeper shadow */
+.card:hover {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+
+
+/* Add some padding inside the card container */
+.container {
+    padding: 2px 16px;
 }
 
