@@ -7,10 +7,10 @@
     <form action="/createprofile/users" method ="post"> 
     username :<input id="username" type="text" value="<%= username %>"><br>
     First Name: <input id = "firstname" type="text" value="<%= firstname %>"><br>
-    Last Name: <input type="text" name="Lname" ><br>
-    Email Address: <input type="email" name="email" ><br>
-    Phone Number: <input type="Number" name="pnum" maxlength="10" ><br>
-    Save : <input type="submit" value="Submit">
+    Last Name: <input type="text" name="Lname" value="<%= lastname %>" ><br>
+    Email Address: <input type="email" name="email" value="<%= email_address %>" ><br>
+    Phone Number: <input type="Number" name="pnum" value ="<%= phone_number %>" maxlength="10" ><br>
+    <input type="submit" value="Save">
     </form>
   </main>
   </body>

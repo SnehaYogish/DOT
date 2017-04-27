@@ -129,11 +129,7 @@ connection.query(query,function(err,rows) {
     res.redirect('/');
     return;
   }
-  //var obj[] = res.json(rows);
-  var obj = [];
-  obj = JSON.stringify(rows,null, "\t");
-  console.log(obj.username);
-  res.render('editAccount',{ username : obj.username, firstname : obj[8] });
+ res.render('editAccount',{username : rows[0].username, firstname : rows[0].firstname, lastname : rows[0].lastname,email_address: rows[0].email_addre, phone_number : rows[0].phone_number});
 });
 });
 
