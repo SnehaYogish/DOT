@@ -1,7 +1,7 @@
 header {
   position: fixed;
-  top: 200px;
-  left: 400px;
+  top: 150px;
+  left: 600px;
   right: 500px;
   background-color: #ADD8E6;
 }
@@ -19,19 +19,29 @@ body {
   background-size:500px 650px;
   margin-right: 200px
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-size: 50px;
+  font-size: 30px;
+}
+
+input{
+    width: 40%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
 }
 
 #Verify-pass-button{
-  color: #000000;
-  font-size: 50px;
+font-size: 50px;
   text-align: center;
-  background-color: #55acee;
+ background-color: #55acee;
   cursor: pointer;
   width: 250px;
-  margin-bottom:15px
-  background-margin:250px;
+  margin-bottom:15px;
+   position:absolute;
+  top:60px;
   border-radius: 25px;
   box-shadow: 0 6px #999;
+  top:400px;
 }
 

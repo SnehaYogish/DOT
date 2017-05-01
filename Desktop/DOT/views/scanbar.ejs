@@ -1,0 +1,20 @@
+<html>
+  <head>
+    <link rel="stylesheet" type="text/css" href="/css/scanbar.css">
+  </head>
+  <body>
+    <header>D.O.T</header>
+    <main>
+    <form action = "/scanbar/success", method ="post">
+    Current balance: <input type="text" name="TicketNumber"><br>
+    Scan the Bar code to pay 
+        <button onclick="myFunction()" value="next"  id="scan-bar"></button>
+    <script>
+  function MyFunction1() { 
+     window.location.href = '/scanbar/success'
+  }
+</script>
+        </form>
+    </main>
+  </body>
+</html>

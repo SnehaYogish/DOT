@@ -2,25 +2,30 @@
   <head>
     <link rel="stylesheet" type="text/css" href="/css/index.css">
   </head>
-  <body>
+<body>
     <header>Welcome to D.O.T</header>
-    <main>
-        <button onclick="myFunction()"   id="login-form-button">login</button>
-        <button onclick="MyFunction1()"  id="Create-account-form-button">create account</button>
+<main>
+<form action = "/login/users", method ="post">
+<div class="imgcontainer" style="position:absolute; left:500px; top:80px;">
+    <img src="images/profilePic.png" alt="Avatar" class="avatar">
+</div>
+
+<div class="container" style="position:absolute; left:500px; top:200px;">
+    <input type="text" placeholder="Enter Username" name="uname" id="un" required></br>
+    <input type="password" placeholder="Enter Password" name="pwd" id ="pw" required></br>
+    <button type="submit" value="login" id ="submit" >login</button>
+    <button onclick ="myfunction()" type="submit">Register</button>
+    <button type="button" class="cancelbtn"> Cancel</button>
+    <span class="psw"> <a href="#"> Forgot password? </a></span>
+</div>
+
 <script>
-  function MyFunction1() { 
+  function myfunction() { 
      window.location.href = '/createprofile'
   }
 </script>
 
-<script>
-function myFunction() {
-    window.location.href = '/login'
-}
-</script>
-
-
-        </form>
-    </main>
-  </body>
+</form>
+</main>
+</body>
 </html>

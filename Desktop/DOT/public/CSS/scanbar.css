@@ -31,7 +31,7 @@ input{
     box-sizing: border-box;
 }
 
-#verify-my-ticket{
+#scan-bar{
 font-size: 50px;
   text-align: center;
  background-color: #55acee;
@@ -43,4 +43,5 @@ font-size: 50px;
   border-radius: 25px;
   box-shadow: 0 6px #999;
   top:400px;
-} 
+}
+

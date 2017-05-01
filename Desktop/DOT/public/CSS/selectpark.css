@@ -22,46 +22,49 @@ body {
   font-size: 50px;
 }
 
-#Disneycali-form-button {
+#cali-adv {
   cursor: pointer;
   width: 330px;
   height: 330px;
-  margin-bottom:20px;
+  margin-bottom:5px;
   border-radius: 100%;
   top:60px;
-  background-image: url("../images/adventure park button.jpg");
   background-size: contain;
   position:absolute; left:0;
-  background-repeat: round;
-  background-color: #4CAF50;
-  background-height:auto;
   background-color: #55acee;
+
 }
 
+div{
+  width: 50%;
+    padding: 10px 25px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+    
+}
 
-#sixflags-form-button {
+#six-flags{
   cursor: pointer;
   width: 330px;
   height: 330px;
   margin-bottom:15px;
   border-radius: 50%;
   background-size: contain;
-  background-image: url("../images/Six Flags Button.jpg");
   position:absolute;
   top:60px;
   background-repeat: round;
   background-color: #55acee;
-
-
 }
 
-#Disneyland-form-button {
+
+#Disney {
   cursor: pointer;
   width: 330px;
   height: 330px;
   margin-bottom:15px;
-  border-radius: 50%;
-  background-image: url("../images/Disney button.jpg");
+  border-radius: 50%; 
   background-size: contain;
   position:absolute; right:0;
   top:60px;
@@ -70,34 +73,29 @@ body {
 
 }
 
-#KnottsBerry-form-button {
+#Knotts {
   cursor: pointer;
   width: 330px;
   height:330px;
   margin-bottom:15px;
   border-radius: 50%;
-  background-image: url("../images/Knotts button.jpg");
   background-position: center ; 
   position:relative; left:250px;
-  background-size: 330px 330px;
-  background-repeat: round;
-  background-height:auto;
   padding: 15px 32px;
-  background-color: #55acee;
+  background-color: #ADD8E6;
 }
 
-#universal-form-button {
+#universal {
   cursor: pointer;
   width: 330px;
   height:330px;
   margin-bottom:15px;
   border-radius: 50%;
-  background-image: url("../images/Universal button.jpg");
   position:relative; right:250px;
-  bottom:350px;
   background-size: cover;
   background-repeat: round;
-  background-color: #55acee;
+  background-color:  #ADD8E6;
+  bottom:220px;
   }
   
 
