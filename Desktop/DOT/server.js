@@ -77,11 +77,11 @@ app.post('/createprofile/users', function(req, res) {
   var dob = req.body.DOB;
   var pwd = req.body.pwd;
   
-connection.query(query, [username,firstname,lastname,email_addre,phone_number,dob,pwd], function(err) {
+connection.query(query, [username,firstname,lastname,email_addre,phone_number,dob,pwd], function(err,rows) {
     if(err){
       console.log(err);
     }
- res.redirect("/login/payment");
+res.redirect("/login/payment");
 });
 });
 
@@ -97,18 +97,19 @@ app.get('/login/payment',function(req,res){
 });
 
 app.post('/login/payment/save',function(req,res){
-  var query = 'INSERT INTO payment_details(card_number,name,exp_date,cvv,billing_address) VALUES (?,?,?,?,?)';
+  var query = 'INSERT INTO payment_details(card_number,name,exp_date,cvv,billing_address,user_id) VALUES (?,?,?,?,?,?)';
+  var user_id = req.param.user_id;
   var ccnum = req.body.ccnum;
   var cname = req.body.cname;
   var expdate = req.body.expdate;
   var cvv = req.body.cvv;
   var address = req.body.address;
 
-  connection.query(query, [ccnum,cname,expdate,cvv,address],function(err){
+  connection.query(query, [ccnum,cname,expdate,cvv,address,user_id],function(err){
    if(err){
       console.log(err);
     }
-  res.redirect("/login");
+  res.redirect("/login/first");
 });
 });
 
@@ -159,9 +160,30 @@ app.get('/enterTicket',function(req,res){
 res.render('enterTicket');
 });
 
+
 app.post('/enterTicket/verified',function(req,res){
-  res.render('ticketVerification');
+  var ticketNumber = req.body.TicketNumber;
+  connection.query('SELECT purchase_id FROM purchase_ticket_details WHERE type = "ticketyes"', function (err, results, fields) {
+  if (err) {
+    console.log(err);
+    res.send("Please enter the correct username");
+    }
+  
+  else{
+    if(ticketNumber == results[0].purchase_id){
+      res.render('ticketVerification');
+      }
+      else{
+        res.send({
+          "code":204,
+          "success":"ticket number does not match"
+            });
+      }
+    }
+  });
 });
+
+
 
 app.get('/iHavePass', function(req,res){
   res.render('iHavePass');
@@ -175,7 +197,21 @@ app.get('/purchaseTicket', function(req,res){
   res.render('purchaseTicket');
 });
 
-app.post('/purchaseTicket/completed',function(req,res){
+app.post('/purchaseTicket', function(req,res){
+  var query = 'INSERT INTO purchase_ticket_details (date,quantity,type) VALUES (?,?,?)';
+  var date = req.body.Date;
+  var quantity = req.body.Quantity;
+  var type = req.body.Type;
+ 
+  connection.query(query, [date,quantity,type],function(err){
+   if(err){
+      console.log(err);
+    }
+  res.redirect('/purchaseTicket/completed');
+});
+});
+
+app.get('/purchaseTicket/completed',function(req,res){
   res.render('purchaseCompleted');
 });
 
