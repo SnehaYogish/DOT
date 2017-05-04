@@ -1,14 +1,21 @@
 <html>
   <head>
+    <link rel="stylesheet" type="text/css" href="/css/forgot.css">
     <title>reset password</title>
   </head>
   <body>
-    <form method="POST" action="/reset">
+    <form method="POST" action="/reset" onSubmit="alert('Password is successfully updated')";>
+      <div>
+      username
+      </div>
+      <div>
+        <input type="username" name="username">
+      </div>
       <div>
         new password
       </div>
       <div>
-        <input type="password" name="password">
+        <input type="password" name="pwd">
       </div>
       
       <div>

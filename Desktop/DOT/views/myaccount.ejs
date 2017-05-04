@@ -6,18 +6,13 @@
     <p>My Account</p>
     <body>
     <main>
-    <form>
+    <form  action="/myaccount/:user_id/edit" method="POST">
     My Balance: <input type="text" name="mybalance" ><br>
-    <input onclick = "myFunction()" id ="edit-account-button" value ="Edit Account info"><br>
+    <input id ="edit-account-button" value ="Edit Account info"><br>
     <input onclick = "myfunction()" id ="edit-payment-button" value = "Edit payment info"></button><br>
-    <input onclick = "myfunction1()" id ="pay-now-button" va;uPay Now</button><br>
-    <input onclick = "myfunction2()" id ="refill-button" >Refill Account</button><br>
-
-<script>
-  function myFunction() { 
-     window.location.href = '/myaccount/:user_id/edit'
-  }
-  </script>   
+    <input onclick = "myfunction1()" id ="pay-now-button"  value = "Pay now"></button><br>
+    <input onclick = "myfunction2()" id ="refill-button" value ="Refill Account"></button><br>
+ 
 
 <script>
   function myfunction() { 

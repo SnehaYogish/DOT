@@ -6,11 +6,20 @@ var app = express();
 var bodyParser = require('body-parser');
 var passport = require('passport');
 var LocalStrategy   = require('passport-local').Strategy;
+var session = require('client-sessions');
 
 app.set('views', './views');
 app.set('view engine', 'ejs');
 app.use(express.static('./public'));
 app.use(bodyParser.urlencoded({ extended: true }));
+
+app.use(session({
+  cookieName: 'session', // cookie name dictates the key name added to the request object
+  secret: 'blargadeeblargblarg', // should be a large unguessable string
+  duration: 24 * 60 * 60 * 1000, 
+  signed: true,// how long the session will stay valid in ms
+  activeDuration: 1000 * 60 * 5 // if expiresIn < activeDuration, the session will be extended by activeDuration milliseconds
+}));
 
 
 var connection = mysql.createConnection({
@@ -28,7 +37,7 @@ connection.connect(function(err) {
 
   console.log('Connected to the database.');
 
-  app.listen(8080, function() {
+app.listen(8080, function() {
     console.log('Web server listening on port 8080!');
   });
 });
@@ -45,7 +54,8 @@ app.post('/login/users', function (req,res) {
   var username = req.body.uname;
   var pwd1 = req.body.pwd;
   
-  connection.query('SELECT pwd,user_id FROM profile WHERE username = ?',[username], function (error, results, fields) {
+  
+  connection.query('SELECT * FROM profile WHERE username = ?',[username], function (error, results, fields) {
   if (error) {
     if(username == ""){
       res.send("Please enter the username");}
@@ -55,6 +65,9 @@ app.post('/login/users', function (req,res) {
     }
   else{
     if(pwd1 == results[0].pwd){
+      req.session.user = results[0];
+      req.session.user.user_id = results[0].user_id;
+      console.log(req.session.user.user_id);
       res.redirect("/login/first");
       }
       else{
@@ -81,24 +94,13 @@ connection.query(query, [username,firstname,lastname,email_addre,phone_number,do
     if(err){
       console.log(err);
     }
-res.redirect("/login/payment");
-});
-});
-
-
-app.get('/login/payment',function(req,res){
-  connection.query('SELECT LAST_INSERT_ID();',function(err,rows){
-    if(err){
-      console.log(err);
-    }
-  console.log(rows[0]);
- res.render('payment', {user_id : rows[0].user_id});
+res.redirect("/login/payment/");
 });
 });
 
 app.post('/login/payment/save',function(req,res){
   var query = 'INSERT INTO payment_details(card_number,name,exp_date,cvv,billing_address,user_id) VALUES (?,?,?,?,?,?)';
-  var user_id = req.param.user_id;
+  var user_id = req.session.user.user_id;
   var ccnum = req.body.ccnum;
   var cname = req.body.cname;
   var expdate = req.body.expdate;
@@ -109,21 +111,53 @@ app.post('/login/payment/save',function(req,res){
    if(err){
       console.log(err);
     }
-  res.redirect("/login/first");
+   res.redirect("/");
 });
 });
 
-app.get('/login/first',function(req,res){
-  res.render('select');
+app.get('/login/payment', function(req,res){
+  res.render('payment');
 });
 
 app.get('/myaccount', function(req,res){
+  console.log(req.session.user_id);
   res.render('myaccount')
 });
 
-app.post('/myaccount/:user_id/edit', function(req, res) {
-   var query = 'SELECT * FROM profile WHERE user_id = 26';
-   connection.query(query,function(err,rows) {
+app.get('/forgot',function (req,res){
+  res.render('forgot')
+});
+
+app.post('/reset',function(req,res){
+  var query = 'update profile set pwd = ? where username =?';
+  var username = req.body.username;
+  var pwd = req.body.pwd;
+  
+  connection.query(query,[pwd,username], function (err, results, fields) {
+  if (err) {
+    if(username == ""){
+      res.send("Please enter the username");
+    }
+    else{
+      console.log(err)
+        res.send("Please enter the correct username");
+    }
+    }
+  else{
+      res.send({
+          "code":204,
+          "success":"successfully password is changed"
+            });
+    }
+  });
+  });
+
+
+
+app.post('/myaccount/:user_id/edit',function(req,res){
+  var query = 'SELECT * FROM profile WHERE user_id = ?';
+  var user_id = req.session.user.user_id;
+   connection.query(query,[user_id],function(err,rows) {
    if(err || rows.length === 0) {
     console.log(err || 'No user found.');
     res.redirect('/');
@@ -133,21 +167,9 @@ app.post('/myaccount/:user_id/edit', function(req, res) {
  res.render('editAccount',{username : rows[0].username, firstname : rows[0].firstname, lastname : rows[0].lastname,email_address: rows[0].email_addre, phone_number : rows[0].phone_number});
 });
 });
-
-//app.post('/myaccount/:user_id/edit', function(req, res) {
-  // var query = 'SELECT * FROM payment_details WHERE user_id = 22';
-   
-//connection.query(query,function(err,rows) {
-  // if(err || rows.length === 0) {
-  //  console.log(err || 'No user found.');
-   // res.redirect('/');
-   // return;
-  //}
- //res.render('editAccount',{username : rows[0].username, firstname : rows[0].firstname, lastname : rows[0].lastname,email_address: rows[0].email_addre, phone_number : rows[0].phone_number});
-//});
-//});
-
-
+app.get('/login/first/',function(req,res){
+  res.render('select');
+});
 app.get('/selectpark', function(req,res){
   res.render('selectpark');
 });
@@ -198,12 +220,13 @@ app.get('/purchaseTicket', function(req,res){
 });
 
 app.post('/purchaseTicket', function(req,res){
-  var query = 'INSERT INTO purchase_ticket_details (date,quantity,type) VALUES (?,?,?)';
+  var query = 'INSERT INTO purchase_ticket_details (date,quantity,type,user_id) VALUES (?,?,?,?)';
+  var user_id = req.session.user.user_id;
   var date = req.body.Date;
   var quantity = req.body.Quantity;
   var type = req.body.Type;
  
-  connection.query(query, [date,quantity,type],function(err){
+  connection.query(query, [date,quantity,type,user_id],function(err){
    if(err){
       console.log(err);
     }

@@ -1,0 +1,49 @@
+header {
+  position: fixed;
+  top: 200px;
+  left: 550px;
+  right: 700px;
+  background-color: #ADD8E6;
+}
+
+main {
+  width: 365px;
+  margin: 300px auto 0px auto;
+  background-color: #ADD8E6;
+}
+
+body {
+  background-color: #ADD8E6;
+  background-position: right top;
+  background-size:500px 650px;
+  margin-right: 200px
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 50px;
+}
+
+#username{
+  color: #000000;
+  font-size: 50px;
+  text-align: center;
+  cursor: pointer;
+  width: 250px;
+  margin-bottom:15px;
+  background-color: #55acee;
+ border-radius: 25px;
+  box-shadow: 0 6px #999;
+}
+
+#password {
+  color: #000000;
+  font-size: 50px;
+  text-align: center;
+  cursor: pointer;
+  width: 250px;
+  margin-bottom:15px;
+  background-color: #55acee;
+   border-radius: 25px;
+  box-shadow: 0 6px #999;
+}
+
+
+
