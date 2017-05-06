@@ -1,0 +1,43 @@
+main {
+  width: 365px;
+  margin: 300px auto 0px auto;
+  background-color: #ADD8E6;
+}
+
+body {
+  background-color: #ADD8E6;
+  background-position: right top;
+  background-size:500px 650px;
+  margin-right: 200px
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 50px;
+}
+
+input {
+    width: 40%;
+    height: 40px;
+    box-sizing: border-box;
+    border-radius: 4px;
+    background-color: #f8f8f8;
+    resize: none;
+    margin-bottom:15px;
+}
+
+#submit{
+  font-size: 30px;
+  text-align: center;
+  cursor: pointer;
+  width: 180px;
+  height :80px;
+  margin-bottom:15px;
+  color: #55acee;
+  border-radius: 25px;
+  box-shadow: 0 6px #999;
+  position : relative;
+  top: -100px;
+  left: 120px;
+  right: 0px;
+  bottom: 80px;
+
+}
+
